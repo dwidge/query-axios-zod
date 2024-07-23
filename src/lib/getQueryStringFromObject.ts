@@ -2,8 +2,6 @@
 // Distributed under the Boost Software License, Version 1.0.
 // https://www.boost.org/LICENSE_1_0.txt
 
-import { isDate } from "util/types";
-
 export const getQueryStringFromObject = <
   T extends Record<string, string | number | boolean | Date | null | undefined>
 >(
@@ -24,6 +22,6 @@ export const encodeQueryComponent = (
     ? undefined
     : value === null
     ? "%00"
-    : isDate(value)
+    : value instanceof Date
     ? value.toISOString()
     : encodeURIComponent(value.toString());

@@ -1,20 +1,7 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "jsx": "react-jsx",
-    "module": "EsNext",
-    "moduleResolution": "Node",
-    "noImplicitAny": false,
-    "noUncheckedIndexedAccess": true,
-    "outDir": "dist/esm",
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "target": "ESNext"
+    "types": []
   },
-  "include": ["src"]
+  "extends": "./tsconfig.test.json",
+  "exclude": ["**/*.test.*"]
 }
