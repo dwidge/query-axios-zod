@@ -1,12 +1,9 @@
-# @dwidge/randid
+# Description
 
-BigInt base32 time sortable shardable random id generator and types.
+This library provides an easy way to query JSON data using axios and validate the data structure with Zod.
 
-## publish package
+# License
 
-```
-npm login --scope=@dwidge --registry=https://npm.pkg.github.com
-npm publish
-```
-
-Use Github personal access token with package:create permission as password.
+Copyright DWJ 2024.  
+Distributed under the Boost Software License, Version 1.0.  
+https://www.boost.org/LICENSE_1_0.txt
