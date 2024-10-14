@@ -1,6 +1,6 @@
 {
   "name": "@dwidge/query-axios-zod",
-  "version": "0.0.7",
+  "version": "0.0.13",
   "description": "A library for querying JSON data using axios and Zod.",
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
     "prepare": "rimraf dist && ncp assets/ dist/ && tsc -b . tsconfig.cjs.json tsconfig.test.json",
     "test": "node --enable-source-maps --test --test-name-pattern"
   },
-  "dependencies": {
+  "peerDependencies": {
     "axios": "^1.7.7",
     "zod": "^3.23.8"
   },
