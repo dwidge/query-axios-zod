@@ -3,19 +3,19 @@
 // https://www.boost.org/LICENSE_1_0.txt
 
 import axios, { AxiosError, AxiosInstance } from "axios";
-import { responseErrorMessage } from "./friendlyErrorMessage.js";
+import { friendlyErrorMessage } from "./friendlyErrorMessage.js";
 
 export type Fetch = <R, B>(
   method: "get" | "post" | "put" | "delete",
   url: string,
-  data?: B
+  data?: B,
 ) => Promise<R>;
 
 export const useFetch =
-  (
+  <R extends object | undefined, B extends object | undefined>(
     axiosInstance: AxiosInstance = axios,
     baseURL?: string,
-    token?: string
+    token?: string,
   ): Fetch =>
   (method, url, data) =>
     axiosInstance
@@ -29,7 +29,7 @@ export const useFetch =
       .then((r) => r.data)
       .catch((e) => {
         throw e instanceof AxiosError
-          ? new Error(responseErrorMessage(e), {
+          ? new Error(friendlyErrorMessage(e), {
               cause: {
                 code: e.code,
                 message: e.message,

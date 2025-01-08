@@ -8,13 +8,14 @@ export const toDbQueryOptions = ({
   _offset: offset,
   _limit: limit,
   _order: order,
+  ...columns
 }: GetQueryOptions): DbQueryOptions => ({
   offset,
   limit,
   order: order
     ? ((order instanceof Array ? order : [order]).map((c) => c.split(".")) as [
         ...string[],
-        "ASC" | "DESC"
+        "ASC" | "DESC",
       ][])
     : undefined,
 });
