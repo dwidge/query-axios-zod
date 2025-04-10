@@ -8,6 +8,7 @@ export const toDbQueryOptions = ({
   _offset: offset,
   _limit: limit,
   _order: order,
+  _from: from,
   ...columns
 }: GetQueryOptions): DbQueryOptions => ({
   offset,
@@ -18,4 +19,5 @@ export const toDbQueryOptions = ({
         "ASC" | "DESC",
       ][])
     : undefined,
+  from: from,
 });

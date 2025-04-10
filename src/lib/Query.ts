@@ -9,7 +9,8 @@ export const GetQueryOptions = z
     _offset: z.coerce.number().int().min(0),
     _limit: z.coerce.number().int().min(0).max(1000),
     _order: z.union([z.string(), z.string().array()]),
-    _history: z.string().length(0),
+    _from: z.coerce.number().int().min(0),
+    _history: z.coerce.number().int().min(0),
   })
   .partial();
 export type GetQueryOptions = z.infer<typeof GetQueryOptions>;
@@ -19,7 +20,8 @@ export const DbQueryOptions = z
     offset: z.number().int().min(0),
     limit: z.number().int().min(0).max(1000),
     order: z.string().min(1).max(32).array().array(),
-    history: z.string().length(0),
+    from: z.number().int().min(0),
+    history: z.number().int().min(0),
   })
   .partial();
 export type DbQueryOptions = z.infer<typeof DbQueryOptions>;
