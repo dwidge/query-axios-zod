@@ -9,6 +9,7 @@ export const toDbQueryOptions = ({
   _limit: limit,
   _order: order,
   _from: from,
+  _history: history,
   ...columns
 }: GetQueryOptions): DbQueryOptions => ({
   offset,
@@ -20,4 +21,5 @@ export const toDbQueryOptions = ({
       ][])
     : undefined,
   from: from,
+  history,
 });
