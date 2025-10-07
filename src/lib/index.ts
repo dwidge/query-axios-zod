@@ -4,6 +4,7 @@ export * from "./friendlyErrorMessage.js";
 export * from "./getObjectFromQueryString.js";
 export * from "./getQueryStringFromObject.js";
 export * from "./getQueryStringFromUrl.js";
+export * from "./getValuesFromQueryString.js";
 export * from "./Query.js";
 export * from "./toDbQueryOptions.js";
 export * from "./useFetch.js";
